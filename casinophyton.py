@@ -22,7 +22,7 @@ print("\n≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈�
 
 print("""\ntu dinero inicial sera de 1000 dolares, podras conseguir un millon de dolares apostando?, ve tu suerte en este casino imrovisado!!""")
 
-dinero = 1000
+dinero = 999999
 
 print("\nlo primero que ves son varias opciones para poder apostar tu dinero")
 
@@ -70,7 +70,7 @@ buena suerte!;
 
 """)
 
-        print("tu dinero actual es:", dinero, "$\n")
+        print(f"tu dinero actual es: {dinero}$\n")
 
         print("cuanto quieres apostar?")
 
@@ -94,11 +94,11 @@ buena suerte!;
 
             
 
-        else:
+        elif dineroap <= dinero:
 
-            print("tus cartas iniciales son: ", cartasbj)
+            print(f"\ntus cartas iniciales son: {cartasbj}")
 
-            print("las cartas de tu oponente son ", cartasbj2)
+            print(f"las cartas de tu oponente son {cartasbj2}")
 
             print("quieres pedir mas cartas?")
 
@@ -110,9 +110,9 @@ buena suerte!;
 
                 cartasbj += random.randint(1,12)
 
-                print("\nahora tienes ", cartasbj)
+                print(f"\nahora tienes {cartasbj}")
 
-                print("las cartas de tu oponente serian", cartasbj2)
+                print(f"las cartas de tu oponente serian {cartasbj2}")
 
                 opcionbj = 0
 
@@ -126,9 +126,9 @@ buena suerte!;
 
                     cartasbj += random.randint(1,12)
 
-                    print("\nahora tienes ", cartasbj)
+                    print(f"\nahora tienes {cartasbj}")
 
-                    print("las cartas de tu oponente serian",cartasbj2)
+                    print(f"las cartas de tu oponente serian {cartasbj2}")
 
                     opcionbj = 0
 
@@ -140,19 +140,75 @@ buena suerte!;
 
                     if opcionbj == 1 and not cartasbj > 21:
 
-                        print("\nse desactiva blackjack despues por mas de 3 cartas! (talvez lo arregle despues muchos codigos aa)")
+                        cartasbj += random.randint(1,12)
 
-                elif cartasbj > 21:
+                        print(f"\nahora tienes {cartasbj}")
 
-                    perdistebj = 1
+                        print(f"las cartas de tu oponente serian {cartasbj2}")
 
-            elif opcionbj == 2:
+                        opcionbj = 0
 
-                    print("\ncartas restantes", cartasbj)
+                        print("quieres mas cartas?")
 
-            else:
+                        opcionbj = int(input("si. 1, no. 2 | "))
 
-                print("\nquedaste con ", cartasbj, "puntos")
+                        #tiempo 4
+
+                        if opcionbj == 1 and not cartasbj > 21:
+
+                            cartasbj += random.randint(1,12)
+
+                            print(f"\nahora tienes {cartasbj}")
+
+                            print(f"las cartas de tu oponente serian {cartasbj2}")
+
+                            opcionbj = 0
+
+                            print("quieres mas cartas?")
+
+                            opcionbj = int(input("si. 1, no. 2 | "))
+
+                            #tiempo 5
+
+                            if opcionbj == 1 and not cartasbj > 21:
+
+                                cartasbj += random.randint(1,12)
+
+                                print(f"\nahora tienes {cartasbj}")
+
+                                print(f"las cartas de tu oponente serian {cartasbj2}")
+
+                                opcionbj = 0
+
+                                print("quieres mas cartas?")
+
+                                opcionbj = int(input("si. 1, no. 2 | "))
+
+                                #final tiempo
+
+                                if opcionbj == 1 and not cartasbj > 21:
+
+                                    cartasbj += random.randint(1,12)
+
+                                    print(f"\nahora tienes {cartasbj}")
+
+                                    print(f"las cartas de tu oponente serian {cartasbj2}")
+
+                                    opcionbj = 0
+
+                                    print("se va a dejar automaticamente despues de 5 cartas")
+
+            
+
+            elif opcionbj is not 1:
+
+                print(f"\nquedaste con {cartasbj} puntos")
+
+            
+
+            elif cartasbj > 21:
+
+               perdistebj = 1
 
             
 
@@ -160,7 +216,7 @@ buena suerte!;
 
         
 
-        if cartasbj > cartasbj2 or cartasbj2 > 21 and not cartasbj > 21:
+        if cartasbj > cartasbj2 and not cartasbj > 21:
 
            ganastebj = 1
 
@@ -174,19 +230,19 @@ buena suerte!;
 
            dinero -= dineroap
 
-           print("\nperdiste dinero por perder!, tu dinero actual es ", dinero, "$!")
+           print(f"\nperdiste dinero por perder!, tu dinero actual es {dinero}$!")
 
         elif ganastebj == 1:
 
              dinero += dineroap
 
-             print("\nganaste dinero por ganar!, tu dinero actual es ", dinero, "$!")
+             print(f"\nganaste dinero por ganar!, tu dinero actual es {dinero}$!")
 
         # DINERO DISPONIBLE #
 
     elif opcion == 2:
 
-        print("\nTu dinero disponible es ", dinero, "$!")
+        print(f"\nTu dinero disponible es {dinero}$!")
 
     else:
 
@@ -218,7 +274,7 @@ if dinero > 999999:
 
     print("\neres el rey de las apuestas y conseguiste un millon de dolares!")
 
-    print("ganaste el juego por", dinero, "$!")
+    print(f"ganaste el juego por {dinero}$!")
 
     print("muchas gracias por jugar :3, -karmadev0")
 
